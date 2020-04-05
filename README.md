@@ -4,3 +4,4 @@
 3- npm run dev
 
 Enjoy !
+PS: Take in consideration that path is hardcoded to localhost.
