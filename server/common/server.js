@@ -22,13 +22,8 @@ class ExpressServer {
     return this;
   }
 
-  listen(port = 3000) {
+  listen(port = 3300) {
     const welcome = p => () => console.log(`up and running in ${process.env.NODE_ENV || 'development'} @: ${os.hostname()} on port: ${p}}`);
-    // console.log('__dirname', __dirname);
-    // https.createServer({
-    //   key: fs.readFileSync(`${__dirname}/../../server.key`),
-    //   cert: fs.readFileSync(`${__dirname}/../../server.cert`),
-    // }, app).listen(port, welcome(port));
     http.createServer(app).listen(port, welcome(port));
     return app;
   }
