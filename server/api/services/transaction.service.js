@@ -14,7 +14,11 @@ class TransactionService {
 
   static getAllTransactions = () => {
     return transactions;
-  }
+  };
+
+  static getTransactionById = id => {
+    return transactions.find(t => t.id === +id);
+  } 
 }
 
 export default TransactionService;

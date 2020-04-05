@@ -33,6 +33,18 @@ class Controller {
 
     res.status(200).send({ transactions, total });
   };
+
+  getTransactionById = (req, res) => {
+    const { id } = req.params;
+
+    if (!id) {
+      utils.respondError(res, { status: 400, message: "Transaction id is mandatory" });
+      return;
+    }
+
+    const transaction = TransactionService.getTransactionById(id);
+    res.status(200).send(transaction);
+  }
 }
 
 export default new Controller();

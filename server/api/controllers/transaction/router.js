@@ -5,3 +5,4 @@ export default express
   .Router()
   .post('/create', controller.createTransaction)
   .get('/all', controller.getAllTransactions)
+  .get('/:id', controller.getTransactionById);
